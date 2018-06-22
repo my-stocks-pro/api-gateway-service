@@ -2,9 +2,59 @@ package approvedServ
 
 import (
 	"github.com/kataras/iris"
-	"github.com/my-stocks-pro/api-server/models"
 	"github.com/my-stocks-pro/api-server/crud/approvedCrud"
+	"fmt"
 )
+
+type ImageFormatType struct {
+	Display_name  string
+	DPI           int
+	File_size     int
+	Format        string
+	Height        int
+	Is_licensable bool
+	Width         int
+}
+
+type ImageLinksType struct {
+	Height int
+	URL    string
+	Width  int
+}
+
+type DataImageType struct {
+	Data []struct {
+		ID         string
+		Added_date string
+		Aspect     float64
+		Assets struct {
+			Small_jpg      ImageFormatType
+			Medium_jpg     ImageFormatType
+			Huge_jpg       ImageFormatType
+			Supersize_jpg  ImageFormatType
+			Huge_tiff      ImageFormatType
+			Supersize_tiff ImageFormatType
+			Preview        ImageLinksType
+			Small_thumb    ImageLinksType
+			Large_thumb    ImageLinksType
+			Huge_thumb     ImageLinksType
+		}
+		Categories []struct {
+			ID   string
+			Name string
+		}
+		Contributor struct {
+			ID string
+		}
+		Description          string
+		Image_type           string
+		Is_adult             bool
+		Is_illustration      bool
+		Has_property_release bool
+		Keywords             []string
+		media_type           string
+	}
+}
 
 
 type Approved struct {
@@ -26,11 +76,13 @@ func New(crud *approvedCrud.Crud) *Approved {
 //}
 
 func (m *Approved) PostALL(ctx iris.Context) {
-	data := models.Approve{}
+	data := DataImageType{}
 
 	if err := ctx.ReadJSON(&data); err != nil {
 		panic(err.Error())
 	}
 
-	m.crud.Save(data)
+	fmt.Println(data)
+
+	//m.crud.Save(data)
 }

@@ -4,6 +4,7 @@ import (
 	"github.com/kataras/iris"
 	"github.com/my-stocks-pro/api-server/models"
 	"github.com/my-stocks-pro/api-server/crud/earningsCrud"
+	"fmt"
 )
 
 type Earnings struct {
@@ -31,5 +32,7 @@ func (m *Earnings) PostALL(ctx iris.Context) {
 		panic(err.Error())
 	}
 
-	m.crud.Save(data)
+	fmt.Println(data)
+
+	//m.crud.Save(data)
 }
