@@ -10,6 +10,9 @@ func main(){
 
 	server := apiserver.NewServer()
 	server.API.Logger().SetLevel("debug")
+	server.PSQL.MakeMigrations(server.PSQL.NewConn())
+
+	server.InitMiddleware()
 
 	server.Routs()
 

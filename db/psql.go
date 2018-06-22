@@ -4,6 +4,7 @@ import (
 	"os"
 	"fmt"
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
 type TypePSQL struct {
