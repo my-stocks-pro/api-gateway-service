@@ -1,4 +1,4 @@
-package redisServ
+package earningsRDSServ
 
 import (
 	"github.com/kataras/iris"
@@ -11,12 +11,12 @@ type TypeDataForRedis struct {
 	ListIDS   []string
 }
 
-type Redis struct {
+type Earnings struct {
 	crud *redisCrud.Crud
 }
 
-func New(crud *redisCrud.Crud) *Redis {
-	return &Redis{
+func New(crud *redisCrud.Crud) *Earnings {
+	return &Earnings{
 		crud: crud,
 	}
 }
@@ -29,7 +29,7 @@ func New(crud *redisCrud.Crud) *Redis {
 //	ctx.JSON(p.crud.Find(id))
 //}
 
-func (m *Redis) PostALL(ctx iris.Context) {
+func (m *Earnings) PostALL(ctx iris.Context) {
 	data := TypeDataForRedis{}
 
 	if err := ctx.ReadJSON(&data); err != nil {
@@ -39,4 +39,12 @@ func (m *Redis) PostALL(ctx iris.Context) {
 	fmt.Println(data)
 
 	//m.crud.Save(data)
+}
+
+
+func (m *Earnings) GetALL(ctx iris.Context) {
+	_, err := ctx.JSON(m.crud.GetApprovedData())
+	if err != nil {
+		fmt.Println(err)
+	}
 }

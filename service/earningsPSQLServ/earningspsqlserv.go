@@ -1,4 +1,4 @@
-package earningsServ
+package earningsPSQLServ
 
 import (
 	"github.com/kataras/iris"

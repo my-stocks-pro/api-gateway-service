@@ -11,18 +11,16 @@ func (s *TypeServer) Routs() {
 		ctx.Writef("Hello from MY_STOCKS_PRO SERVER")
 	})
 
-	s.API.PartyFunc("/room", func(r iris.Party) {
-		r.Get("/welcome", func(ctx iris.Context) {
-			ctx.Writef("Hello from ROOM")
-		})
+	s.API.PartyFunc("/api", func(r iris.Party) {
+		r.Get("/redis", ServiceApprovedRDS.GetALL)
 	})
 
 
 	s.API.PartyFunc("/data", func(r iris.Party) {
 		//r.Get("/psql/{service:string}", project.GetAll)
-		r.Post("/redis/approved", ServiceRedis.PostALL)
-		r.Post("/psql/approved", ServiceApproved.PostALL)
-		r.Post("/psql/earnings", ServiceEarnings.PostALL)
+		r.Post("/redis/approved", ServiceApprovedRDS.PostALL)
+		r.Post("/psql/approved", ServiceApprovedPSQL.PostALL)
+		r.Post("/psql/earnings", ServiceEarningsPSQL.PostALL)
 	})
 
 }

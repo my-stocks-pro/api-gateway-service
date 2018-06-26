@@ -1,4 +1,4 @@
-package approvedServ
+package approvedPSQLServ
 
 import (
 	"github.com/kataras/iris"
