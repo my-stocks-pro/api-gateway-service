@@ -32,13 +32,14 @@ func (i *Crud) Get(key string) []byte {
 	if errGet == redis.Nil {
 		return nil
 	}
+
 	return b
 }
 
 
-func (i *Crud) GetApprovedData() *TypeDataForRedis {
+func (i *Crud) GetApprovedData() TypeDataForRedis {
 
-	dateByte := i.Get("Date")
+	dateByte := i.Get("date")
 	listidsByte := i.Get("listids")
 
 	var date string
@@ -53,7 +54,7 @@ func (i *Crud) GetApprovedData() *TypeDataForRedis {
 		fmt.Println(err2)
 	}
 
-	res := &TypeDataForRedis{
+	res := TypeDataForRedis{
 		date,
 		listids,
 	}

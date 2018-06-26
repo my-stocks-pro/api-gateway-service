@@ -36,8 +36,6 @@ func (m *Earnings) PostALL(ctx iris.Context) {
 		panic(err.Error())
 	}
 
-	fmt.Println(data)
-
 	//m.crud.Save(data)
 }
 

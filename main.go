@@ -12,6 +12,8 @@ func main(){
 	server.API.Logger().SetLevel("debug")
 	server.PSQL.MakeMigrations(server.PSQL.NewConn())
 
+	server.HistoryALL()
+
 	server.InitMiddleware()
 
 	server.Routs()
