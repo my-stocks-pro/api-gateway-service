@@ -23,37 +23,35 @@ type ImageLinksType struct {
 }
 
 type DataImageType struct {
-	Data []struct {
-		ID         string
-		Added_date string
-		Aspect     float64
-		Assets struct {
-			Small_jpg      ImageFormatType
-			Medium_jpg     ImageFormatType
-			Huge_jpg       ImageFormatType
-			Supersize_jpg  ImageFormatType
-			Huge_tiff      ImageFormatType
-			Supersize_tiff ImageFormatType
-			Preview        ImageLinksType
-			Small_thumb    ImageLinksType
-			Large_thumb    ImageLinksType
-			Huge_thumb     ImageLinksType
-		}
-		Categories []struct {
-			ID   string
-			Name string
-		}
-		Contributor struct {
-			ID string
-		}
-		Description          string
-		Image_type           string
-		Is_adult             bool
-		Is_illustration      bool
-		Has_property_release bool
-		Keywords             []string
-		media_type           string
+	ID         string
+	Added_date string
+	Aspect     float64
+	Assets struct {
+		Small_jpg      ImageFormatType
+		Medium_jpg     ImageFormatType
+		Huge_jpg       ImageFormatType
+		Supersize_jpg  ImageFormatType
+		Huge_tiff      ImageFormatType
+		Supersize_tiff ImageFormatType
+		Preview        ImageLinksType
+		Small_thumb    ImageLinksType
+		Large_thumb    ImageLinksType
+		Huge_thumb     ImageLinksType
 	}
+	Categories []struct {
+		ID   string
+		Name string
+	}
+	Contributor struct {
+		ID string
+	}
+	Description          string
+	Image_type           string
+	Is_adult             bool
+	Is_illustration      bool
+	Has_property_release bool
+	Keywords             []string
+	media_type           string
 }
 
 
@@ -76,7 +74,7 @@ func New(crud *approvedCrud.Crud) *Approved {
 //}
 
 func (m *Approved) PostALL(ctx iris.Context) {
-	data := DataImageType{}
+	var data interface{}
 
 	if err := ctx.ReadJSON(&data); err != nil {
 		panic(err.Error())

@@ -21,6 +21,8 @@ func (s *TypeServer) Routs() {
 	s.API.PartyFunc("/data", func(r iris.Party) {
 		//r.Get("/psql/{service:string}", project.GetAll)
 		r.Post("/redis/approved", ServiceRedis.PostALL)
+		r.Post("/psql/approved", ServiceApproved.PostALL)
+		r.Post("/psql/earnings", ServiceEarnings.PostALL)
 	})
 
 }
