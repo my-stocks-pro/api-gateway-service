@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8670ebf-2e4f-4eb0-b139-dde580a23fc4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/crud/redisCrud/rediscrud.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apiserver/middleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/apiserver/middleware.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apiserver/routing.go" beforeDir="false" afterPath="$PROJECT_DIR$/apiserver/routing.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/approvedServ/approvedserv.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/approvedServ/approvedserv.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/earningsServ/earningsserv.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/earningsServ/earningsserv.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiserver/new.go" beforeDir="false" afterPath="$PROJECT_DIR$/apiserver/new.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/redisServ/redisserv.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/redisServ/redisserv.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,13 +53,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routing.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+              <folding>
+                <element signature="e#14#100#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routing.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apiserver/routing.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="330">
+              <caret line="22" column="50" lean-forward="true" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
               <folding>
                 <element signature="e#19#56#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apiserver/new.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+              <folding>
+                <element signature="e#19#98#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="psql.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/psql.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="735">
+              <caret line="49" selection-start-line="49" selection-end-line="57" selection-end-column="1" />
+              <folding>
+                <element signature="e#12#107#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/crud/approvedCrud/approvedcrud.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="e#22#111#0" expanded="true" />
               </folding>
@@ -83,7 +116,7 @@
       <file leaf-file-name="approvedserv.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/approvedServ/approvedserv.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-814">
+            <state relative-caret-position="-793">
               <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="29" />
             </state>
           </provider>
@@ -101,11 +134,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="redisserv.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="redisserv.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service/redisServ/redisserv.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+            <state relative-caret-position="300">
+              <caret line="29" column="3" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
               <folding>
                 <element signature="e#19#93#0" expanded="true" />
               </folding>
@@ -120,39 +153,6 @@
               <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
               <folding>
                 <element signature="e#19#103#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="psql.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/psql.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="34" column="27" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="27" />
-              <folding>
-                <element signature="e#12#107#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rds.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/rds.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="earningsserv.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/earningsServ/earningsserv.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-              <folding>
-                <element signature="e#22#162#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -200,13 +200,15 @@
         <option value="$PROJECT_DIR$/service/slackServ/slackservice.go" />
         <option value="$PROJECT_DIR$/service/psqlServ/psqlserv.go" />
         <option value="$PROJECT_DIR$/models/approved.go" />
-        <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/service/earningsServ/earningsserv.go" />
         <option value="$PROJECT_DIR$/service/approvedServ/approvedserv.go" />
         <option value="$PROJECT_DIR$/crud/redisCrud/rediscrud.go" />
         <option value="$PROJECT_DIR$/apiserver/middleware.go" />
-        <option value="$PROJECT_DIR$/service/redisServ/redisserv.go" />
         <option value="$PROJECT_DIR$/apiserver/routing.go" />
+        <option value="$PROJECT_DIR$/scheduler/new.go" />
+        <option value="$PROJECT_DIR$/apiserver/new.go" />
+        <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/service/redisServ/redisserv.go" />
       </list>
     </option>
   </component>
@@ -323,7 +325,7 @@
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../approved-scheduler" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
@@ -376,9 +378,9 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="right" id="Database" visible="true" weight="0.20088544" />
+      <window_info active="true" anchor="right" id="Database" visible="true" weight="0.20088544" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36225596" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.36225596" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" weight="0.3394794" />
@@ -427,16 +429,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apiserver/new.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding>
-            <element signature="e#19#98#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/psqlServ/psqlserv.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -448,16 +440,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="628" column="4" selection-start-line="628" selection-start-column="4" selection-end-line="628" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-          <folding>
-            <element signature="e#14#108#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -478,7 +460,7 @@
     <entry file="file://$PROJECT_DIR$/service/earningsServ/earningsserv.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="41">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
           <folding>
             <element signature="e#22#162#0" expanded="true" />
           </folding>
@@ -489,16 +471,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="14" selection-start-column="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/psql.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="34" column="27" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="27" />
-          <folding>
-            <element signature="e#12#107#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -529,20 +501,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/redisServ/redisserv.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding>
-            <element signature="e#19#93#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crud/approvedCrud/approvedcrud.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="e#22#111#0" expanded="true" />
           </folding>
@@ -551,17 +513,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service/approvedServ/approvedserv.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-814">
+        <state relative-caret-position="-793">
           <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheduler/new.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="27" selection-end-column="1" />
+          <folding>
+            <element signature="e#19#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/psql.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" selection-start-line="49" selection-end-line="57" selection-end-column="1" />
+          <folding>
+            <element signature="e#12#107#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apiserver/new.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+          <folding>
+            <element signature="e#19#98#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding>
+            <element signature="e#14#100#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apiserver/routing.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="330">
+          <caret line="22" column="50" lean-forward="true" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
           <folding>
             <element signature="e#19#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/redisServ/redisserv.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="29" column="3" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+          <folding>
+            <element signature="e#19#93#0" expanded="true" />
           </folding>
         </state>
       </provider>

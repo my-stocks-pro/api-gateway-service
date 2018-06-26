@@ -6,6 +6,11 @@ import (
 	"github.com/my-stocks-pro/api-server/crud/redisCrud"
 )
 
+type TypeDataForRedis struct {
+	Date      string
+	ListIDS   []string
+}
+
 type Redis struct {
 	crud *redisCrud.Crud
 }
@@ -25,7 +30,7 @@ func New(crud *redisCrud.Crud) *Redis {
 //}
 
 func (m *Redis) PostALL(ctx iris.Context) {
-	data := []string{}
+	data := TypeDataForRedis{}
 
 	if err := ctx.ReadJSON(&data); err != nil {
 		panic(err.Error())

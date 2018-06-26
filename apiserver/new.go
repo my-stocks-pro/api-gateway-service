@@ -5,6 +5,7 @@ import (
 	"github.com/my-stocks-pro/api-server/db"
 )
 
+
 type TypeServer struct {
 	PSQL *db.TypePSQL
 	RDS  *db.TypeRedis

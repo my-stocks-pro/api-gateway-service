@@ -18,7 +18,7 @@ func main(){
 
 	errServer := server.API.Run(
 		// Start the web serverHTTP at localhost:80
-		iris.Addr(":8008"),
+		iris.Addr(":8001"),
 		// disables updates:
 		iris.WithoutVersionChecker,
 		// skip err serverHTTP closed when CTRL/CMD+C pressed:
