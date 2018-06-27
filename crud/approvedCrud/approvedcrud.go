@@ -16,9 +16,8 @@ func New(connection *gorm.DB) *Crud {
 	}
 }
 
-
 func (i *Crud) Save(approved models.Approve) {
+	i.db.Where("id_i=?", approved.IDI).Assign(approved).FirstOrCreate(&approved)
 	fmt.Println(approved)
-	//i.db.Where("ico_id=?", finance.IcoId).Assign(finance).FirstOrCreate(&finance)
 }
 

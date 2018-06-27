@@ -4,56 +4,57 @@ import (
 	"github.com/kataras/iris"
 	"github.com/my-stocks-pro/api-server/crud/approvedCrud"
 	"fmt"
+	"time"
+	"github.com/my-stocks-pro/api-server/models"
 )
 
 type ImageFormatType struct {
-	Display_name  string
-	DPI           int
-	File_size     int
-	Format        string
-	Height        int
-	Is_licensable bool
-	Width         int
+	DisplayName  string `json:"display_name"`
+	DPI          int    `json:"dpi"`
+	FileSize     int    `json:"file_size"`
+	Format       string `json:"format"`
+	Height       int    `json:"height"`
+	IsLicensable bool   `json:"is_licensable"`
+	Width        int    `json:"width"`
 }
 
 type ImageLinksType struct {
-	Height int
-	URL    string
-	Width  int
+	Height int    `json:"height"`
+	URL    string `json:"url"`
+	Width  int    `json:"width"`
 }
 
 type DataImageType struct {
-	ID         string
-	Added_date string
-	Aspect     float64
+	ID        string  `json:"id"`
+	AddedDate string  `json:"added_date"`
+	Aspect    float64 `json:"aspect"`
 	Assets struct {
-		Small_jpg      ImageFormatType
-		Medium_jpg     ImageFormatType
-		Huge_jpg       ImageFormatType
-		Supersize_jpg  ImageFormatType
-		Huge_tiff      ImageFormatType
-		Supersize_tiff ImageFormatType
-		Preview        ImageLinksType
-		Small_thumb    ImageLinksType
-		Large_thumb    ImageLinksType
-		Huge_thumb     ImageLinksType
+		SmallJpg      ImageFormatType `json:"small_jpg"`
+		MediumJpg     ImageFormatType `json:"medium_jpg"`
+		HugeJpg       ImageFormatType `json:"huge_jpg"`
+		SupersizeJpg  ImageFormatType `json:"supersize_jpg"`
+		HugeTiff      ImageFormatType `json:"huge_tiff"`
+		SupersizeTiff ImageFormatType `json:"supersize_tiff"`
+		Preview       ImageLinksType  `json:"preview"`
+		SmallThumb    ImageLinksType  `json:"small_thumb"`
+		LargeThumb    ImageLinksType  `json:"large_thumb"`
+		HugeThumb     ImageLinksType  `json:"huge_thumb"`
 	}
 	Categories []struct {
-		ID   string
-		Name string
+		ID   string `json:"id"`
+		Name string `json:"name"`
 	}
 	Contributor struct {
-		ID string
+		ID string `json:"id"`
 	}
-	Description          string
-	Image_type           string
-	Is_adult             bool
-	Is_illustration      bool
-	Has_property_release bool
-	Keywords             []string
-	media_type           string
+	Description        string   `json:"description"`
+	ImageType          string   `json:"image_type"`
+	IsAdult            bool     `json:"is_adult"`
+	IsIllustration     bool     `json:"is_illustration"`
+	HasPropertyRelease bool     `json:"has_property_release"`
+	Keywords           []string `json:"keywords"`
+	MediaType          string   `json:"media_type"`
 }
-
 
 type Approved struct {
 	crud *approvedCrud.Crud
@@ -74,13 +75,24 @@ func New(crud *approvedCrud.Crud) *Approved {
 //}
 
 func (m *Approved) PostALL(ctx iris.Context) {
-	var data interface{}
+	var data DataImageType
 
 	if err := ctx.ReadJSON(&data); err != nil {
 		panic(err.Error())
 	}
 
-	fmt.Println(data)
+	t, errParse := time.Parse("2006-01-02", data.AddedDate)
+	if errParse != nil {
+		fmt.Println(errParse)
+	}
 
-	//m.crud.Save(data)
+	image := models.Approve{
+		Timestamp:   t.Unix(),
+		IDI:         data.ID,
+		AddedDate:   data.AddedDate,
+		Link:        data.Assets.SmallThumb.URL,
+		Description: data.Description,
+	}
+
+	m.crud.Save(image)
 }

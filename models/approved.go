@@ -1,10 +1,12 @@
 package models
 
+import "github.com/jinzhu/gorm"
+
 type Approve struct {
-	//gorm.Model
-	//Name        string       `gorm:"size:100" json:"id"`
-	//URL         string       `gorm:"size:1024" json:"url"`
-	//Description string       `gorm:"size:10240" json:"description"`
-	//StartDate   int64        `gorm:"type:timestamp" json:"start_date"`
-	//EndDate     int64        `gorm:"type:timestamp" json:"end_date"`
+	gorm.Model
+	Timestamp   int64  `gorm:"type:int" json:"timestamp"`
+	IDI         string `gorm:"size:30" json:"id"`
+	AddedDate   string `gorm:"size:30" json:"added_date"`
+	Link        string `gorm:"size:1024" json:"link"`
+	Description string `gorm:"size:10240" json:"description"`
 }

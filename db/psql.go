@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
+	"github.com/my-stocks-pro/api-server/models"
 )
 
 type TypePSQL struct {
@@ -21,14 +22,16 @@ func (p *TypePSQL) MakeMigrations(connection *gorm.DB) {
 	if migrate == "1" {
 		fmt.Println("Migrate")
 
-		//TODO: ADD CONSTRAINTS
-		connection.AutoMigrate()
+		connection.AutoMigrate(
+			&models.Approve{}, )
+
+		//connection.AutoMigrate()
 
 		fmt.Println("Migrations done")
 	}
 }
 
-func (p *TypePSQL) NewConn() *gorm.DB  {
+func (p *TypePSQL) NewConn() *gorm.DB {
 	connStr := fmt.Sprintf("sslmode=disable host=%s port=%s dbname=%s user=%s password=%s",
 		p.PGHOST, p.PGPORT, p.PGNAME, p.PGUSER, p.PGPASS)
 

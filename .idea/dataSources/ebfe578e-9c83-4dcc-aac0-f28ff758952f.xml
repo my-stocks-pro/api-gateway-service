@@ -48,7 +48,7 @@
     </role>
     <schema id="11" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2018-06-27.17:50:58.085</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2018-06-27.17:56:38.432</IntrospectionTimestamp>
       <IntrospectionStateNumber>35221</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
@@ -71,7 +71,9 @@
     <sequence id="17" parent="11" name="approves_id_seq">
       <ObjectId>49239</ObjectId>
       <StateNumber>35220</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
     </sequence>
     <table id="18" parent="11" name="approves">
       <ObjectId>49241</ObjectId>

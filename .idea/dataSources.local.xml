@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="mystockpro@localhost" uuid="5d6a58dc-6b75-4405-95e2-2cdac5fae0bd">
+    <data-source name="mystockpro@localhost" uuid="ebfe578e-9c83-4dcc-aac0-f28ff758952f">
       <database-info product="PostgreSQL" version="9.6.9" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
-      <user-name>alex</user-name>
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
       <introspection-schemas>mystockpro:public</introspection-schemas>
     </data-source>
   </component>
