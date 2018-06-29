@@ -4,7 +4,6 @@ import (
 	"github.com/kataras/iris"
 )
 
-
 func (s *TypeServer) Routs() {
 
 	s.API.Get("/welcome", func(ctx iris.Context) {
@@ -24,8 +23,8 @@ func (s *TypeServer) Routs() {
 	})
 
 
-	s.API.PartyFunc("/history", func(r iris.Party) {
-		r.Get("/approved/{start:string}/{end:string}", ServiceApprovedPSQL.GetHistory)
+	s.API.PartyFunc("/history/", func(r iris.Party){
+		r.Get("/approved", ServiceApprovedPSQL.GetHistory)
+		//r.Get("/earnings", ServiceEarningsPSQL.GetHistory)
 	})
-
 }

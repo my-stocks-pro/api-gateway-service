@@ -26,6 +26,12 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/dyninc/qstring"
+  packages = ["."]
+  revision = "ab5840a88e818d51076cb7e9708e7cb7ff125a27"
+
+[[projects]]
+  branch = "master"
   name = "github.com/eknkc/amber"
   packages = [
     ".",
@@ -277,6 +283,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "3f31f2da35b7115e2a02016b9c945ae0e575f0916654052b14cfda36a21a4666"
+  inputs-digest = "7daacdcba9dbdd40979bf5071035847a06bfbd39618609384619bc47f84c0d49"
   solver-name = "gps-cdcl"
   solver-version = 1
