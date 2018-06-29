@@ -23,4 +23,9 @@ func (s *TypeServer) Routs() {
 		r.Post("/psql/earnings", ServiceEarningsPSQL.PostALL)
 	})
 
+
+	s.API.PartyFunc("/history", func(r iris.Party) {
+		r.Get("/approved/{start:string}/{end:string}", ServiceApprovedPSQL.GetHistory)
+	})
+
 }

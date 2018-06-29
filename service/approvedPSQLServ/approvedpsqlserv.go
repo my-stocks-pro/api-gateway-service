@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"time"
 	"github.com/my-stocks-pro/api-server/models"
+	"github.com/my-stocks-pro/api-server/utils"
 )
 
 type ImageFormatType struct {
@@ -96,3 +97,24 @@ func (m *Approved) PostALL(ctx iris.Context) {
 
 	m.crud.Save(image)
 }
+
+
+func (m *Approved) GetHistory(ctx iris.Context) {
+
+	url := "http://127.0.0.1:8002/history/approved/"
+
+	start := ctx.Values().GetString("start")
+	end := ctx.Values().GetString("end")
+
+
+	fmt.Println(start)
+	fmt.Println(end)
+
+	b, e := utils.NewRequest(url)
+	if e != nil {
+		fmt.Println(e)
+	}
+	fmt.Println(string(b))
+}
+
+
