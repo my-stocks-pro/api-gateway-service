@@ -105,7 +105,6 @@ func (m *Approved) PostALL(ctx iris.Context) {
 	m.crud.Save(image)
 }
 
-
 func (m *Approved) GetHistory(ctx iris.Context) {
 
 	date := Date{}
@@ -113,22 +112,13 @@ func (m *Approved) GetHistory(ctx iris.Context) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(date.Start)
-	fmt.Println(date.End)
 
-	q := &Date{
-		Start: date.Start,
-		End:   date.End,
-	}
-
-	query, errQ := qstring.MarshalString(q)
+	query, errQ := qstring.MarshalString(&date)
 	if errQ != nil {
 		fmt.Println(errQ)
 	}
 
-	url := "http://127.0.0.1:8002/history/approved?" + query
-
-	b, e := utils.NewRequest(url)
+	b, e := utils.NewRequest(fmt.Sprintf("%s?%s", "http://127.0.0.1:8002/history/approved", query))
 	if e != nil {
 		fmt.Println(e)
 	}
