@@ -1,11 +1,12 @@
 package models
 
-type Earnings struct {
-	//gorm.Model
-	//Name        string       `gorm:"size:100" json:"id"`
-	//URL         string       `gorm:"size:1024" json:"url"`
-	//Description string       `gorm:"size:10240" json:"description"`
-	//StartDate   int64        `gorm:"type:timestamp" json:"start_date"`
-	//EndDate     int64        `gorm:"type:timestamp" json:"end_date"`
-}
+import "github.com/jinzhu/gorm"
 
+type Earnings struct {
+	gorm.Model
+	IDI      int `gorm:"size:100" json:"idi"`
+	Download int `gorm:"size:100" json:"download"`
+	Category string `gorm:"size:100" json:"category"`
+	Country  string `gorm:"size:100" json:"country"`
+	City     string `gorm:"size:100" json:"city"`
+}
