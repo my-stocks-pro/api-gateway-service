@@ -25,6 +25,6 @@ func (s *TypeServer) Routs() {
 
 	s.API.PartyFunc("/history/", func(r iris.Party){
 		r.Get("/approved", ServiceApprovedPSQL.GetHistory)
-		//r.Get("/earnings", ServiceEarningsPSQL.GetHistory)
+		r.Get("/earnings", ServiceEarningsPSQL.GetHistory)
 	})
 }

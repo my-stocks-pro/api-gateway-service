@@ -4,13 +4,14 @@ import (
 	"fmt"
 	"net/http"
 	"io/ioutil"
+	"bytes"
 )
 
-func NewRequest(url string) ([]byte, error) {
+func NewRequest(url string, b []byte) ([]byte, error) {
 
 	fmt.Println(url)
 
-	req, err := http.NewRequest("GET", url, nil)
+	req, err := http.NewRequest("GET", url, bytes.NewBuffer(b))
 	if err != nil {
 		return nil, err
 	}

@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 	"github.com/my-stocks-pro/api-server/models"
-	"github.com/my-stocks-pro/api-server/utils"
-	"github.com/dyninc/qstring"
+	//"github.com/my-stocks-pro/api-server/utils"
+	//"github.com/dyninc/qstring"
 )
 
 type ImageFormatType struct {
@@ -107,21 +107,21 @@ func (m *Approved) PostALL(ctx iris.Context) {
 
 func (m *Approved) GetHistory(ctx iris.Context) {
 
-	date := Date{}
-	err := ctx.ReadForm(&date)
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	query, errQ := qstring.MarshalString(&date)
-	if errQ != nil {
-		fmt.Println(errQ)
-	}
-
-	b, e := utils.NewRequest(fmt.Sprintf("%s?%s", "http://127.0.0.1:8002/history/approved", query))
-	if e != nil {
-		fmt.Println(e)
-	}
-	fmt.Println(string(b))
+	//date := Date{}
+	//err := ctx.ReadForm(&date)
+	//if err != nil {
+	//	fmt.Println(err)
+	//}
+	//
+	//query, errQ := qstring.MarshalString(&date)
+	//if errQ != nil {
+	//	fmt.Println(errQ)
+	//}
+	//
+	//b, e := utils.NewRequest(fmt.Sprintf("%s?%s", "http://127.0.0.1:8002/history/approved", query))
+	//if e != nil {
+	//	fmt.Println(e)
+	//}
+	//fmt.Println(string(b))
 }
 

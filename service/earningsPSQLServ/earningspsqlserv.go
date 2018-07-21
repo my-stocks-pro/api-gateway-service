@@ -5,14 +5,18 @@ import (
 	"github.com/my-stocks-pro/api-server/models"
 	"github.com/my-stocks-pro/api-server/crud/earningsCrud"
 	"fmt"
+	"time"
+	"github.com/my-stocks-pro/api-server/utils"
+	"encoding/json"
 )
 
 type DataEarningsType struct {
-	IDI      int
-	Download int
-	Category string
-	Country  string
-	City     string
+	EarningDate string
+	IDI         int
+	Download    int
+	Category    string
+	Country     string
+	City        string
 }
 
 type Earnings struct {
@@ -40,13 +44,13 @@ func (m *Earnings) PostALL(ctx iris.Context) {
 		panic(err.Error())
 	}
 
-	//t, errParse := time.Parse("2006-01-02", data.AddedDate)
-	//if errParse != nil {
-	//	fmt.Println(errParse)
-	//}
+	t, errParse := time.Parse("2006-01-02", data.EarningDate)
+	if errParse != nil {
+		fmt.Println(errParse)
+	}
 
 	image := models.Earnings{
-		//Timestamp: t.Unix(),
+		Timestamp: t.Unix(),
 		IDI:       data.IDI,
 		Download:  data.Download,
 		Category:  data.Category,
@@ -61,6 +65,11 @@ func (m *Earnings) PostALL(ctx iris.Context) {
 	//m.crud.Save(data)
 }
 
+type Date struct {
+	Start string `form:"start"`
+	End   string `form:"end"`
+}
+
 func (m *Earnings) GetHistory(ctx iris.Context) {
 
 	//date := Date{}
@@ -73,11 +82,22 @@ func (m *Earnings) GetHistory(ctx iris.Context) {
 	//if errQ != nil {
 	//	fmt.Println(errQ)
 	//}
-	//
-	//b, e := utils.NewRequest(fmt.Sprintf("%s?%s", "http://127.0.0.1:8002/history/approved", query))
-	//if e != nil {
-	//	fmt.Println(e)
-	//}
-	//fmt.Println(string(b))
+
+	date := Date{
+		Start: "2018-06-01",
+		End: "2018-07-01",
+	}
+
+	b, err := json.Marshal(date)
+	if b != nil {
+		fmt.Println(err)
+	}
+
+	b, e := utils.NewRequest("http://127.0.0.1:8003/history/earnings", b)
+	if e != nil {
+		fmt.Println(e)
+	}
+
+	fmt.Println(string(b))
 }
 
