@@ -23,7 +23,8 @@ func (p *TypePSQL) MakeMigrations(connection *gorm.DB) {
 		fmt.Println("Migrate")
 
 		connection.AutoMigrate(
-			&models.Approve{}, )
+			&models.Approve{},
+			&models.Earnings{},)
 
 		//connection.AutoMigrate()
 

@@ -59,11 +59,9 @@ func (m *Earnings) PostALL(ctx iris.Context) {
 		City:      data.City,
 	}
 
-	fmt.Println(image)
+	//fmt.Println(image)
 
-	//m.crud.Save(image)
-
-	//m.crud.Save(data)
+	m.crud.Save(image)
 }
 
 type Date struct {

@@ -3,6 +3,7 @@ package earningsCrud
 import (
 	"github.com/jinzhu/gorm"
 	"github.com/my-stocks-pro/api-server/models"
+	"fmt"
 )
 
 type Crud struct {
@@ -15,6 +16,7 @@ func New(connection *gorm.DB) *Crud {
 	}
 }
 
-func (i *Crud) Save(finance models.Earnings) {
-	//i.db.Where("ico_id=?", finance.IcoId).Assign(finance).FirstOrCreate(&finance)
+func (i *Crud) Save(earnings models.Earnings) {
+	i.db.Where("id_i=?", earnings.IDI).Omit("country", "city").Assign(earnings).FirstOrCreate(&earnings)
+	fmt.Println(earnings)
 }

@@ -76,8 +76,8 @@
     <schema id="16" parent="2" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
-      <IntrospectionTimestamp>2018-07-22.12:53:43.969</IntrospectionTimestamp>
-      <IntrospectionStateNumber>559</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-07-22.13:12:20.382</IntrospectionTimestamp>
+      <IntrospectionStateNumber>3024</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -123,7 +123,15 @@
       <HandlerId>335</HandlerId>
       <Type>index</Type>
     </access-method>
-    <sequence id="23" parent="16" name="approves_id_seq">
+    <sequence id="23" parent="16" name="earnings_id_seq">
+      <ObjectId>24576</ObjectId>
+      <StateNumber>3023</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="24" parent="16" name="approves_id_seq">
       <ObjectId>16386</ObjectId>
       <StateNumber>558</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
@@ -131,11 +139,15 @@
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <table id="24" parent="16" name="approves">
+    <table id="25" parent="16" name="approves">
       <ObjectId>16388</ObjectId>
       <StateNumber>558</StateNumber>
     </table>
-    <column id="25" parent="24" name="id">
+    <table id="26" parent="16" name="earnings">
+      <ObjectId>24578</ObjectId>
+      <StateNumber>3023</StateNumber>
+    </table>
+    <column id="27" parent="25" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -144,67 +156,151 @@
       <TypeId>23</TypeId>
       <SequenceName>approves_id_seq</SequenceName>
     </column>
-    <column id="26" parent="24" name="created_at">
+    <column id="28" parent="25" name="created_at">
       <Position>2</Position>
       <DataType>timestamp with time zone|0s</DataType>
       <StateNumber>558</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="27" parent="24" name="updated_at">
+    <column id="29" parent="25" name="updated_at">
       <Position>3</Position>
       <DataType>timestamp with time zone|0s</DataType>
       <StateNumber>558</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="28" parent="24" name="deleted_at">
+    <column id="30" parent="25" name="deleted_at">
       <Position>4</Position>
       <DataType>timestamp with time zone|0s</DataType>
       <StateNumber>558</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="29" parent="24" name="timestamp">
+    <column id="31" parent="25" name="timestamp">
       <Position>5</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>558</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="30" parent="24" name="id_i">
+    <column id="32" parent="25" name="id_i">
       <Position>6</Position>
       <DataType>varchar(30)|0s</DataType>
       <StateNumber>558</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="31" parent="24" name="added_date">
+    <column id="33" parent="25" name="added_date">
       <Position>7</Position>
       <DataType>varchar(30)|0s</DataType>
       <StateNumber>558</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="32" parent="24" name="link">
+    <column id="34" parent="25" name="link">
       <Position>8</Position>
       <DataType>varchar(1024)|0s</DataType>
       <StateNumber>558</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="33" parent="24" name="description">
+    <column id="35" parent="25" name="description">
       <Position>9</Position>
       <DataType>varchar(10240)|0s</DataType>
       <StateNumber>558</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="34" parent="24" name="approves_pkey">
+    <index id="36" parent="25" name="approves_pkey">
       <ObjectId>16395</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="35" parent="24" name="idx_approves_deleted_at">
+    <index id="37" parent="25" name="idx_approves_deleted_at">
       <ObjectId>16397</ObjectId>
       <ColNames>deleted_at</ColNames>
     </index>
-    <key id="36" parent="24" name="approves_pkey">
+    <key id="38" parent="25" name="approves_pkey">
       <ObjectId>16396</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>approves_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="39" parent="26" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>3023</StateNumber>
+      <DefaultExpression>nextval(&apos;earnings_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>earnings_id_seq</SequenceName>
+    </column>
+    <column id="40" parent="26" name="created_at">
+      <Position>2</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <StateNumber>3023</StateNumber>
+      <TypeId>1184</TypeId>
+    </column>
+    <column id="41" parent="26" name="updated_at">
+      <Position>3</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <StateNumber>3023</StateNumber>
+      <TypeId>1184</TypeId>
+    </column>
+    <column id="42" parent="26" name="deleted_at">
+      <Position>4</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <StateNumber>3023</StateNumber>
+      <TypeId>1184</TypeId>
+    </column>
+    <column id="43" parent="26" name="timestamp">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>3023</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="44" parent="26" name="date">
+      <Position>6</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>3023</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="45" parent="26" name="id_i">
+      <Position>7</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>3023</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="46" parent="26" name="download">
+      <Position>8</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>3023</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="47" parent="26" name="category">
+      <Position>9</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>3023</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="48" parent="26" name="country">
+      <Position>10</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>3023</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="49" parent="26" name="city">
+      <Position>11</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>3023</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="50" parent="26" name="earnings_pkey">
+      <ObjectId>24582</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="51" parent="26" name="idx_earnings_deleted_at">
+      <ObjectId>24584</ObjectId>
+      <ColNames>deleted_at</ColNames>
+    </index>
+    <key id="52" parent="26" name="earnings_pkey">
+      <ObjectId>24583</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>earnings_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
   </database-model>
