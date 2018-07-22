@@ -29,14 +29,6 @@ func New(crud *earningsCrud.Crud) *Earnings {
 	}
 }
 
-//func (p *ProjectFinance) GetAll(ctx iris.Context) {
-//	ctx.JSON(p.crud.Select())
-//}
-//
-//func (p *ProjectFinance) GetById(ctx iris.Context, id string) {
-//	ctx.JSON(p.crud.Find(id))
-//}
-
 func (m *Earnings) PostALL(ctx iris.Context) {
 	var data DataEarningsType
 
@@ -59,8 +51,6 @@ func (m *Earnings) PostALL(ctx iris.Context) {
 		City:      data.City,
 	}
 
-	//fmt.Println(image)
-
 	m.crud.Save(image)
 }
 
@@ -70,17 +60,6 @@ type Date struct {
 }
 
 func (m *Earnings) GetHistory(ctx iris.Context) {
-
-	//date := Date{}
-	//err := ctx.ReadForm(&date)
-	//if err != nil {
-	//	fmt.Println(err)
-	//}
-	//
-	//query, errQ := qstring.MarshalString(&date)
-	//if errQ != nil {
-	//	fmt.Println(errQ)
-	//}
 
 	date := Date{
 		Start: "2018-06-01",

@@ -74,14 +74,6 @@ func New(crud *approvedCrud.Crud) *Approved {
 	}
 }
 
-//func (p *ProjectFinance) GetAll(ctx iris.Context) {
-//	ctx.JSON(p.crud.Select())
-//}
-//
-//func (p *ProjectFinance) GetById(ctx iris.Context, id string) {
-//	ctx.JSON(p.crud.Find(id))
-//}
-
 func (m *Approved) PostALL(ctx iris.Context) {
 	var data DataImageType
 
@@ -106,17 +98,6 @@ func (m *Approved) PostALL(ctx iris.Context) {
 }
 
 func (m *Approved) GetHistory(ctx iris.Context) {
-
-	//date := Date{}
-	//err := ctx.ReadForm(&date)
-	//if err != nil {
-	//	fmt.Println(err)
-	//}
-	//
-	//query, errQ := qstring.MarshalString(&date)
-	//if errQ != nil {
-	//	fmt.Println(errQ)
-	//}
 
 	b, err := json.Marshal(Date{
 		Start: "2018-06-01",
