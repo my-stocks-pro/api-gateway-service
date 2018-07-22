@@ -6,8 +6,9 @@ import (
 	"fmt"
 	"time"
 	"github.com/my-stocks-pro/api-server/models"
-	//"github.com/my-stocks-pro/api-server/utils"
-	//"github.com/dyninc/qstring"
+
+	"github.com/my-stocks-pro/api-server/utils"
+	"encoding/json"
 )
 
 type ImageFormatType struct {
@@ -63,7 +64,6 @@ type Date struct {
 	End   string `form:"end"`
 }
 
-
 type Approved struct {
 	crud *approvedCrud.Crud
 }
@@ -117,11 +117,18 @@ func (m *Approved) GetHistory(ctx iris.Context) {
 	//if errQ != nil {
 	//	fmt.Println(errQ)
 	//}
-	//
-	//b, e := utils.NewRequest(fmt.Sprintf("%s?%s", "http://127.0.0.1:8002/history/approved", query))
-	//if e != nil {
-	//	fmt.Println(e)
-	//}
-	//fmt.Println(string(b))
-}
 
+	b, err := json.Marshal(Date{
+		Start: "2018-06-01",
+		End:   "2018-07-01",
+	})
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	r, e := utils.NewRequest("http://127.0.0.1:8002/history/approved", b)
+	if e != nil {
+		fmt.Println(e)
+	}
+	fmt.Println(string(r))
+}
