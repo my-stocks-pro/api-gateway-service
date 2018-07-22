@@ -31,5 +31,11 @@ func LoadConfig() *TypeConfig {
 		log.Fatalf("error: %v", errYaml)
 	}
 
+	prod := os.Getenv("PROD")
+	if prod == "" {
+		conf.Hosts["earnings-history-service"] = "127.0.0.1"
+		conf.Hosts["approved-history-service"] = "127.0.0.1"
+	}
+
 	return conf
 }

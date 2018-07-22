@@ -6,10 +6,10 @@ import (
 	"net/http"
 )
 
-const (
-	approvedHistoryURL = "http://127.0.0.1:8006/approved/history"
-	earningsHistoryURL = "http://127.0.0.1:8007/earnings/history"
-)
+//const (
+//	approvedHistoryURL = "http://127.0.0.1:8006/approved/history"
+//	earningsHistoryURL = "http://127.0.0.1:8007/earnings/history"
+//)
 
 
 func (s *TypeServer)Request (url string) (*http.Response, error) {
@@ -28,7 +28,6 @@ func (s *TypeServer)Request (url string) (*http.Response, error) {
 }
 
 func (s *TypeServer) HistoryALL() {
-
 	history := os.Getenv("HISTORYALL")
 
 	if history == "1" {
@@ -41,7 +40,9 @@ func (s *TypeServer) HistoryALL() {
 				fmt.Println(err)
 			}
 			fmt.Println(resp)
-		}(approvedHistoryURL)
+		}(fmt.Sprintf("http://%s:%s/approved/history",
+			s.Config.Hosts["approved-history-service"],
+			s.Config.Ports["approved-history-service"]))
 
 		func(url string) {
 			resp, err := s.Request(url)
@@ -49,7 +50,9 @@ func (s *TypeServer) HistoryALL() {
 				fmt.Println(err)
 			}
 			fmt.Println(resp)
-		}(earningsHistoryURL)
+		}(fmt.Sprintf("http://%s:%s/approved/history",
+			s.Config.Hosts["earnings-history-service"],
+			s.Config.Ports["earnings-history-service"]))
 
 	}
 }
