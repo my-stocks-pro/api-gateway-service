@@ -24,7 +24,7 @@ func (p *TypePSQL) MakeMigrations(connection *gorm.DB) {
 
 		connection.AutoMigrate(
 			&models.Approve{},
-			&models.Earnings{},)
+			&models.Earnings{}, )
 
 		//connection.AutoMigrate()
 
@@ -49,7 +49,6 @@ func (p *TypePSQL) NewConn() *gorm.DB {
 	//p.MakeMigrations(connection)
 
 	return connection
-	return nil
 }
 
 func NewPSQL() *TypePSQL {
