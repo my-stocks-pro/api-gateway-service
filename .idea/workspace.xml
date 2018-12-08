@@ -2,31 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8670ebf-2e4f-4eb0-b139-dde580a23fc4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consul.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/engine.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logger.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gopkg.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gopkg.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-server" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/psql.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/psql.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/AUTHORS" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/AUTHORS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/CODE_OF_CONDUCT.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/CODE_OF_CONDUCT.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/CONTRIBUTING.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/Dockerfile.build" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/Dockerfile.build" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/Gopkg.lock" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/Gopkg.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/Gopkg.toml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/Gopkg.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/HISTORY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/_benchmarks/netcore-mvc-templates/wwwroot/lib/jquery/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/_benchmarks/netcore-mvc-templates/wwwroot/lib/jquery/LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/cache/AUTHORS" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/cache/AUTHORS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/cache/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/cache/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/sessions/AUTHORS" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/sessions/AUTHORS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/sessions/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/sessions/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/typescript/AUTHORS" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/typescript/AUTHORS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/typescript/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/typescript/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/websocket/AUTHORS" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/websocket/AUTHORS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/kataras/iris/websocket/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/kataras/iris/websocket/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiserver/history.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiserver/middleware.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiserver/new.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiserver/routing.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/api-server.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crud/approvedCrud/approvedcrud.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crud/earningsCrud/earningscrud.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crud/redisCrud/rediscrud.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/psql.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/rds.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/approved.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/earnings.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/approvedPSQLServ/approvedpsqlserv.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/approvedRDSServ/approvedrdsserv.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/earningsPSQLServ/earningspsqlserv.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/earningsRDSServ/earningsrdsserv.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swagger/api-server.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/requester.go" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,104 +113,94 @@
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.kubernetes.usages" />
     </session>
+    <session id="1601904015">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="go" value="1586" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Go" value="1586" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Go" value="21" />
+          <entry key="Makefile" value="1" />
+          <entry key="YAML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.go.postfix.template.usages.trigger" />
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="Makefile" value="1" />
+          <entry key="go" value="21" />
+          <entry key="yaml" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Makefile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+            <state relative-caret-position="60">
+              <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/psql.go">
+        <entry file="file://$PROJECT_DIR$/gateway.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dockerfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apiserver/new.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+            <state relative-caret-position="255">
+              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding>
-                <element signature="e#19#144#0" expanded="true" />
+                <element signature="e#15#65#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apiserver/routing.go">
+        <entry file="file://$PROJECT_DIR$/engine.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+            <state relative-caret-position="288">
+              <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
               <folding>
-                <element signature="e#19#56#0" expanded="true" />
+                <element signature="e#14#64#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/approvedRDSServ/approvedrdsserv.go">
+        <entry file="file://$PROJECT_DIR$/proxy.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+            <state>
+              <caret column="12" selection-start-column="12" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crud/approvedCrud/approvedcrud.go">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/consul.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/earningsPSQLServ/earningspsqlserv.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-              <folding>
-                <element signature="e#26#243#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/earnings.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="55" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="55" />
+              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -227,6 +218,7 @@
     <findStrings>
       <find>&quot;github.com/jinzhu/gorm&quot;</find>
       <find>approves</find>
+      <find>New</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.10.3/libexec" />
@@ -244,8 +236,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/db/new.go" />
-        <option value="$PROJECT_DIR$/app/new.go" />
         <option value="$PROJECT_DIR$/server/new.go" />
         <option value="$PROJECT_DIR$/repo/approved.go" />
         <option value="$PROJECT_DIR$/crud/earnings.go" />
@@ -268,19 +258,14 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/5d6a58dc-6b75-4405-95e2-2cdac5fae0bd/console.sql" />
         <option value="$PROJECT_DIR$/crud/approvedCrud/approvedcrud.go" />
         <option value="$PROJECT_DIR$/models/approved.go" />
-        <option value="$PROJECT_DIR$/apiserver/middleware.go" />
-        <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/db/rds.go" />
         <option value="$PROJECT_DIR$/utils/requester.go" />
         <option value="$PROJECT_DIR$/models/earnings.go" />
         <option value="$PROJECT_DIR$/crud/earningsCrud/earningscrud.go" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4999d00c-a538-4ce3-918f-b9d14b1601d0/console.sql" />
-        <option value="$PROJECT_DIR$/service/approvedPSQLServ/approvedpsqlserv.go" />
         <option value="$PROJECT_DIR$/apiserver/routing.go" />
         <option value="$PROJECT_DIR$/config.yaml" />
         <option value="$PROJECT_DIR$/config/config.yaml" />
-        <option value="$PROJECT_DIR$/service/earningsPSQLServ/earningspsqlserv.go" />
-        <option value="$PROJECT_DIR$/apiserver/new.go" />
         <option value="$PROJECT_DIR$/config/config.go" />
         <option value="$PROJECT_DIR$/apiserver/history.go" />
         <option value="$PROJECT_DIR$/doc/api-server.json" />
@@ -288,7 +273,20 @@
         <option value="$PROJECT_DIR$/Dockerfile.go" />
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/Makefile" />
+        <option value="$PROJECT_DIR$/apiserver/middleware.go" />
         <option value="$PROJECT_DIR$/db/psql.go" />
+        <option value="$PROJECT_DIR$/apiserver/new.go" />
+        <option value="$PROJECT_DIR$/service/earningsPSQLServ/earningspsqlserv.go" />
+        <option value="$PROJECT_DIR$/service/approvedPSQLServ/approvedpsqlserv.go" />
+        <option value="$PROJECT_DIR$/logger.go" />
+        <option value="$PROJECT_DIR$/router.go" />
+        <option value="$PROJECT_DIR$/server.go" />
+        <option value="$PROJECT_DIR$/service.go" />
+        <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/proxy.go" />
+        <option value="$PROJECT_DIR$/gateway.go" />
+        <option value="$PROJECT_DIR$/engine.go" />
+        <option value="$PROJECT_DIR$/consul.go" />
       </list>
     </option>
   </component>
@@ -298,105 +296,27 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="y" value="-30" />
-    <option name="width" value="1920" />
-    <option name="height" value="1110" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api-server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api-server" type="462c0819:PsiDirectoryNode" />
-              <item name="apiserver" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api-server" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api-server" type="462c0819:PsiDirectoryNode" />
-              <item name="crud" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api-server" type="462c0819:PsiDirectoryNode" />
-              <item name="crud" type="462c0819:PsiDirectoryNode" />
-              <item name="approvedCrud" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api-server" type="462c0819:PsiDirectoryNode" />
-              <item name="crud" type="462c0819:PsiDirectoryNode" />
-              <item name="earningsCrud" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api-server" type="462c0819:PsiDirectoryNode" />
-              <item name="crud" type="462c0819:PsiDirectoryNode" />
-              <item name="redisCrud" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api-server" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api-server" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api-server" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api-server" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="approvedPSQLServ" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api-server" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="approvedRDSServ" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api-server" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="earningsPSQLServ" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api-server" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="earningsRDSServ" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api-server" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="api-gateway-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api-gateway-service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -453,35 +373,36 @@
       </envs>
       <kind value="PACKAGE" />
       <filePath value="$PROJECT_DIR$/" />
-      <package value="github.com/my-stocks-pro/api-server" />
+      <package value="github.com/my-stocks-pro/api-gateway-service" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19382322" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19313304" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.41611722" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.41566265" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4992057" visible="true" weight="0.37722772" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4985694" weight="0.37710842" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Database Console" order="11" weight="0.17362638" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5007943" side_tool="true" weight="0.51428574" />
-      <window_info anchor="right" id="Jenkins" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50143063" side_tool="true" weight="0.37710842" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.14376996" />
+      <window_info anchor="right" id="Jenkins" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,20 +423,12 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/new.go" />
-    <entry file="file://$PROJECT_DIR$/crud/new.go" />
     <entry file="file://$PROJECT_DIR$/../../kataras/iris/context/context.go" />
     <entry file="file://$PROJECT_DIR$/service/slackServ/slackserv.go" />
     <entry file="file://$PROJECT_DIR$/scheduler/new.go" />
     <entry file="file://$PROJECT_DIR$/../../kataras/iris/hero/hero.go" />
     <entry file="file://$PROJECT_DIR$/../../go-redis/redis/redis.go" />
-    <entry file="file://$PROJECT_DIR$/crud/redisCrud/rediscrud.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/crud/redisCrud/rediscrud.go" />
     <entry file="file://$PROJECT_DIR$/../../jinzhu/gorm/main.go" />
     <entry file="file://$PROJECT_DIR$/../../kataras/golog/logger.go" />
     <entry file="file://$PROJECT_DIR$/../../jinzhu/gorm/model.go" />
@@ -532,146 +445,20 @@
     </entry>
     <entry file="file://$USER_HOME$/.brew/Cellar/go/1.10.3/libexec/src/net/http/request.go" />
     <entry file="file://$USER_HOME$/.brew/Cellar/go/1.10.3/libexec/src/net/http/header.go" />
-    <entry file="file://$PROJECT_DIR$/db/rds.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://ebfe578e-9c83-4dcc-aac0-f28ff758952f/database/mystockpro/schema/public/table/approves" />
-    <entry file="file://$PROJECT_DIR$/models/approved.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://4999d00c-a538-4ce3-918f-b9d14b1601d0/database/mystockspro/schema/public/table/approves" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4999d00c-a538-4ce3-918f-b9d14b1601d0/console.sql" />
-    <entry file="file://$PROJECT_DIR$/crud/earningsCrud/earningscrud.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/approvedPSQLServ/approvedpsqlserv.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="897">
-          <caret line="99" column="49" selection-start-line="99" selection-start-column="49" selection-end-line="99" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/earningsRDSServ/earningsrdsserv.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apiserver/middleware.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/api-server.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="52" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/config.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/requester.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swagger/api-server.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/service/earningsRDSServ/earningsrdsserv.go" />
+    <entry file="file://$PROJECT_DIR$/swagger/api-server.json" />
     <entry file="das://4999d00c-a538-4ce3-918f-b9d14b1601d0/database/mystockspro/schema/public/table/earnings" />
     <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor />
           <second_editor />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apiserver/history.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apiserver/routing.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-          <folding>
-            <element signature="e#19#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/approvedRDSServ/approvedrdsserv.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crud/approvedCrud/approvedcrud.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/earningsPSQLServ/earningspsqlserv.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-          <folding>
-            <element signature="e#26#243#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/earnings.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="55" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apiserver/new.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding>
-            <element signature="e#19#144#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
@@ -680,24 +467,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
+    <entry file="file://$PROJECT_DIR$/service/approvedRDSServ/approvedrdsserv.go" />
+    <entry file="file://$PROJECT_DIR$/db/rds.go" />
+    <entry file="file://$PROJECT_DIR$/apiserver/new.go" />
+    <entry file="file://$PROJECT_DIR$/models/earnings.go" />
+    <entry file="file://$PROJECT_DIR$/models/approved.go" />
+    <entry file="file://$PROJECT_DIR$/db/psql.go" />
+    <entry file="file://$PROJECT_DIR$/apiserver/history.go" />
+    <entry file="file://$PROJECT_DIR$/service/approvedPSQLServ/approvedpsqlserv.go" />
+    <entry file="file://$PROJECT_DIR$/crud/earningsCrud/earningscrud.go" />
+    <entry file="file://$PROJECT_DIR$/service/earningsPSQLServ/earningspsqlserv.go" />
+    <entry file="file://$PROJECT_DIR$/vendor/github.com/kataras/iris/hero/hero.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+        <state relative-caret-position="164">
+          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/psql.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/apiserver/middleware.go" />
+    <entry file="file://$PROJECT_DIR$/apiserver/routing.go" />
+    <entry file="file://$PROJECT_DIR$/crud/approvedCrud/approvedcrud.go" />
+    <entry file="file://$PROJECT_DIR$/config/api-server.yaml" />
+    <entry file="file://$PROJECT_DIR$/config/config.go" />
+    <entry file="file://$PROJECT_DIR$/utils/requester.go" />
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/router.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logger.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="e#14#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding>
+            <element signature="e#14#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proxy.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="e#15#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consul.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
         </state>
       </provider>
     </entry>

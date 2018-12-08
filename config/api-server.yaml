@@ -1,9 +1,0 @@
-service: api-server
-
-hosts:
-  earnings-history-service: earnings-history-service
-  approved-history-service: approved-history-service
-
-ports:
-  earnings-history-service: 8005
-  approved-history-service: 8004
