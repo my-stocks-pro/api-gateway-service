@@ -6,7 +6,7 @@ import (
 
 type Gateway struct {
 	server *gin.Engine
-	proxy  ProxyType
+	proxy  Proxy
 	consul ConsulType
 }
 

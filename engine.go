@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"net/http"
 )
 
 type Message struct {
@@ -11,24 +10,15 @@ type Message struct {
 }
 
 func NewEngine() *gin.Engine {
+	return gin.New()
+}
 
-	router := gin.New()
+func (g Gateway) Routing() {
+	g.server.POST("/scheduler", g.HandleScheduler)
 
-	//in Body type: earnings approved rejected
-	router.POST("/scheduler", func(c *gin.Context) {
-		service := &Message{}
-		if err := c.BindJSON(service); err != nil {
-			c.JSON(http.StatusBadRequest, err.Error())
-			return
-		}
-		Proxy1(service.Type)
-	})
+	g.server.POST("/redis", func(c *gin.Context) {})
+	g.server.POST("/postres", func(c *gin.Context) {})
 
-	router.POST("/redis", func(c *gin.Context) {})
-	router.POST("/postres", func(c *gin.Context) {})
-
-	router.GET("/redis", func(c *gin.Context) {})
-	router.GET("/postres", func(c *gin.Context) {})
-
-	return router
+	g.server.GET("/redis", func(c *gin.Context) {})
+	g.server.GET("/postres", func(c *gin.Context) {})
 }

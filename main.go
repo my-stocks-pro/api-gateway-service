@@ -1,8 +1,7 @@
 package main
 
-func main(){
+func main() {
 
-	gateway := NewGateway()
+	NewGateway().server.Run(":9000")
 
-	gateway.server.Run(":9000")
 }

@@ -1,27 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"net/http"
+	"github.com/kataras/iris/core/errors"
+)
 
-type ProxyType struct {
+type Proxy struct {
+	httpClient *http.Client
 }
 
-
-func NewProxy() ProxyType {
-	return ProxyType{}
-}
-
-func Proxy1(service string) {
-	proxy := map[string]func(){
-		"earnings": func() {
-			fmt.Println("earnings")
-		},
-		"approved": func() {
-			fmt.Println("approved")
-		},
-		"rejected": func() {
-			fmt.Println("approved")
-		},
+func NewProxy() Proxy {
+	return Proxy{
+		httpClient: &http.Client{},
 	}
+}
 
-	proxy[service]()
+func (p Proxy) Do(servicePath string) error {
+	resp, err := http.Post(servicePath, "application/json", nil)
+	if err != nil {
+		return err
+	}
+	if resp.StatusCode != http.StatusOK {
+		return errors.New(resp.Status)
+	}
+	return nil
 }

@@ -3,6 +3,7 @@ package main
 import (
 	consul "github.com/hashicorp/consul/api"
 	"log"
+	"fmt"
 )
 
 type ConsulType struct {
@@ -15,6 +16,8 @@ func NewConsul() ConsulType {
 
 
 func (c ConsulType) DiscoveryService(service string) string {
+	//c.agent.Service(service)
+	fmt.Println(service)
 
 	return ""
 }
