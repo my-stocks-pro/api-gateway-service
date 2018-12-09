@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/my-stocks-pro/api-gateway-service/infrastructure"
 	"github.com/my-stocks-pro/api-gateway-service/engine"
+	"github.com/my-stocks-pro/api-gateway-service/handler"
 )
 
 func main() {
@@ -21,7 +22,9 @@ func main() {
 
 	httpClient := infrastructure.GetHTTPClient()
 
-	server := engine.New(config, logger, consul, httpClient)
+	gateway := handler.New(config, logger, consul, httpClient)
+
+	server := engine.New(gateway)
 
 	server.InitMux()
 

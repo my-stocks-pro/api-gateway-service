@@ -1,4 +1,4 @@
-package gateway
+package handler
 
 import (
 	"net/http"

@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"github.com/my-stocks-pro/api-gateway-service/infrastructure"
-	"github.com/my-stocks-pro/api-gateway-service/gateway"
+	"github.com/my-stocks-pro/api-gateway-service/handler"
 )
 
 type Message struct {
@@ -13,20 +13,15 @@ type Message struct {
 }
 
 type Engine struct {
-	config     infrastructure.Config
-	Engine     *gin.Engine
-	logger     infrastructure.Logger
-	consul     infrastructure.Consul
-	httpClient *http.Client
+	config  infrastructure.Config
+	gateway handler.Gateway
+	Engine  *gin.Engine
 }
 
-func New(config infrastructure.Config, logger infrastructure.Logger, consul infrastructure.Consul, httpClient *http.Client) Engine {
+func New(gateway handler.Gateway) Engine {
 	return Engine{
-		config:     config,
-		Engine:     gin.New(),
-		logger:     logger,
-		consul:     consul,
-		httpClient: httpClient,
+		gateway: gateway,
+		Engine:  gin.New(),
 	}
 }
 
@@ -35,17 +30,18 @@ func (e *Engine) InitMux() {
 	//e.Engine.GET("/health", func(c *gin.Context) {
 	//	c.JSON(200, gin.H{
 	//		"startTime":    s.StartTime,
-			//"currDate": time.Now().Format("2006-01-02 15:04"),
-			//"version":  "1.0",
-			//"service":  g.config.Name,
-		//})
-		//fmt.Println("OK")
+	//"currDate": time.Now().Format("2006-01-02 15:04"),
+	//"version":  "1.0",
+	//"service":  g.config.Name,
+	//})
+	//fmt.Println("OK")
 	//})
 
+	//e.Engine.POST("/scheduler", gin.WrapH(e.getHandler("scheduler")))
 
-	e.Engine.POST("/scheduler", gin.WrapH(e.getHandler("scheduler")))
+	e.Engine.POST("/scheduler", e.gateway.HandleScheduler)
 
-	//api := e.Engine.Group("/gateway")
+	//api := e.Engine.Group("/handler")
 	//{
 	//	api.POST("/scheduler", gin.WrapH(e.getHandler("")))
 	//
@@ -59,5 +55,5 @@ func (e *Engine) InitMux() {
 }
 
 func (e Engine) getHandler(s string) http.Handler {
-	return gateway.SchedulerType{}
+	return handler.SchedulerType{}
 }

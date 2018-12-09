@@ -8,7 +8,7 @@ type Config struct {
 
 func NewConfig() Config {
 	return Config{
-		Name: "api-gateway",
+		Name: "api-handler",
 		Port: ":9000",
 	}
 }

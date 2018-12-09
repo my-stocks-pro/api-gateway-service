@@ -8,7 +8,7 @@ import (
 
 const (
 	logPath   = "app_log"
-	logPrefix = "api-gateway-service"
+	logPrefix = "api-handler-service"
 )
 
 type Logger interface {
