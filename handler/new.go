@@ -2,24 +2,21 @@ package handler
 
 import (
 	"github.com/my-stocks-pro/api-gateway-service/infrastructure"
-	"net/http"
+	"github.com/my-stocks-pro/api-gateway-service/proxy"
 )
 
-type Gateway interface {
+type TypeGateway struct {
+	config infrastructure.Config
+	logger infrastructure.Logger
+	consul infrastructure.Consul
+	proxy  proxy.Proxy
 }
 
-type GatewayType struct {
-	config     infrastructure.Config
-	logger     infrastructure.Logger
-	consul     infrastructure.Consul
-	httpClient *http.Client
-}
-
-func New(config infrastructure.Config, logger infrastructure.Logger, consul infrastructure.Consul, httpClient *http.Client) GatewayType {
-	return GatewayType{
-		config:     config,
-		logger:     logger,
-		consul:     consul,
-		httpClient: httpClient,
+func New(config infrastructure.Config, logger infrastructure.Logger, consul infrastructure.Consul, proxy proxy.Proxy) TypeGateway {
+	return TypeGateway{
+		config: config,
+		logger: logger,
+		consul: consul,
+		proxy:  proxy,
 	}
 }

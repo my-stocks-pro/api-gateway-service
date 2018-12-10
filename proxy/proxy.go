@@ -1,4 +1,4 @@
-package handler
+package proxy
 
 import (
 	"net/http"
@@ -6,17 +6,7 @@ import (
 	"bytes"
 )
 
-type Proxy struct {
-	httpClient *http.Client
-}
-
-func NewProxy() Proxy {
-	return Proxy{
-		httpClient: &http.Client{},
-	}
-}
-
-func (p Proxy) POST(servicePath string, body []byte) error {
+func (p TypeProxy) POST(servicePath string, body []byte) error {
 	resp, err := http.Post(servicePath, "application/json", bytes.NewBuffer(body))
 	if err != nil {
 		return err

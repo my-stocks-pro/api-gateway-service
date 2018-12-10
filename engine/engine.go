@@ -1,31 +1,6 @@
 package engine
 
-import (
-	"github.com/gin-gonic/gin"
-	"net/http"
-	"github.com/my-stocks-pro/api-gateway-service/infrastructure"
-	"github.com/my-stocks-pro/api-gateway-service/handler"
-)
-
-type Message struct {
-	Service string
-	Data    []byte
-}
-
-type Engine struct {
-	config  infrastructure.Config
-	gateway handler.Gateway
-	Engine  *gin.Engine
-}
-
-func New(gateway handler.Gateway) Engine {
-	return Engine{
-		gateway: gateway,
-		Engine:  gin.New(),
-	}
-}
-
-func (e *Engine) InitMux() {
+func (s *Server) InitMux() {
 
 	//e.Engine.GET("/health", func(c *gin.Context) {
 	//	c.JSON(200, gin.H{
@@ -39,7 +14,7 @@ func (e *Engine) InitMux() {
 
 	//e.Engine.POST("/scheduler", gin.WrapH(e.getHandler("scheduler")))
 
-	e.Engine.POST("/scheduler", e.gateway.HandleScheduler)
+	s.Engine.POST("/scheduler", s.gateway.HandleScheduler)
 
 	//api := e.Engine.Group("/handler")
 	//{
@@ -54,6 +29,6 @@ func (e *Engine) InitMux() {
 
 }
 
-func (e Engine) getHandler(s string) http.Handler {
-	return handler.SchedulerType{}
-}
+//func (e Engine) getHandler(s string) http.Handler {
+//	return handler.SchedulerType{}
+//}

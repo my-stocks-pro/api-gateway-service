@@ -4,6 +4,7 @@ import (
 	"github.com/my-stocks-pro/api-gateway-service/infrastructure"
 	"github.com/my-stocks-pro/api-gateway-service/engine"
 	"github.com/my-stocks-pro/api-gateway-service/handler"
+	"github.com/my-stocks-pro/api-gateway-service/proxy"
 )
 
 func main() {
@@ -22,7 +23,9 @@ func main() {
 
 	httpClient := infrastructure.GetHTTPClient()
 
-	gateway := handler.New(config, logger, consul, httpClient)
+	prx := proxy.New(httpClient)
+
+	gateway := handler.New(config, logger, consul, prx)
 
 	server := engine.New(gateway)
 

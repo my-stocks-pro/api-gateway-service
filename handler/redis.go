@@ -3,9 +3,10 @@ package handler
 import (
 	"net/http"
 	"fmt"
+	"github.com/gin-gonic/gin"
 )
 
-func (g Gateway) HandleRedis(c *gin.Context) {
+func (g TypeGateway) HandleRedis(c *gin.Context) {
 
 	msg := Message{}
 	if err := c.BindJSON(&msg); err != nil {
