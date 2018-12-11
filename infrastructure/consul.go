@@ -6,7 +6,7 @@ import (
 )
 
 type Consul interface {
-	DiscoveryService(service string) string
+	DiscoveryService(service string) (string, error)
 }
 
 type ConsulType struct {
@@ -23,10 +23,10 @@ func NewConsul() (ConsulType, error) {
 	}, nil
 }
 
-func (c ConsulType) DiscoveryService(service string) string {
+func (c ConsulType) DiscoveryService(service string) (string, error) {
 	//c.agent.Service(service)
 	fmt.Println(service)
 
-	return ""
+	return "", nil
 }
 

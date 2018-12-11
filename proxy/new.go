@@ -3,7 +3,7 @@ package proxy
 import "net/http"
 
 type Proxy interface {
-	POST(servicePath string, body []byte) error
+	Request(httpMethod string, url string, msg []byte) ([]byte, error)
 }
 
 type TypeProxy struct {

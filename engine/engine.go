@@ -1,34 +1,38 @@
 package engine
 
+import (
+	"github.com/gin-gonic/gin"
+	"github.com/my-stocks-pro/api-gateway-service/handler"
+)
+
 func (s *Server) InitMux() {
 
-	//e.Engine.GET("/health", func(c *gin.Context) {
-	//	c.JSON(200, gin.H{
-	//		"startTime":    s.StartTime,
-	//"currDate": time.Now().Format("2006-01-02 15:04"),
-	//"version":  "1.0",
-	//"service":  g.config.Name,
-	//})
-	//fmt.Println("OK")
-	//})
-
-	//e.Engine.POST("/scheduler", gin.WrapH(e.getHandler("scheduler")))
-
-	s.Engine.POST("/scheduler", s.gateway.HandleScheduler)
-
-	//api := e.Engine.Group("/handler")
-	//{
-	//	api.POST("/scheduler", gin.WrapH(e.getHandler("")))
-	//
-	//	api.GET("/redis", g.HandleRedis)
-	//	api.POST("/redis", g.HandleRedis)
-	//
-	//	api.GET("/postres", func(c *gin.Context) {})
-	//	api.POST("/postres", func(c *gin.Context) {})
-	//}
-
+	s.Engine.GET("/gateway/:service", s.GetHandler)
+	s.Engine.POST("/gateway/:service", s.GetHandler)
 }
 
-//func (e Engine) getHandler(s string) http.Handler {
-//	return handler.SchedulerType{}
-//}
+
+func (s *Server) GetHandler(c *gin.Context) {
+	serviceType := c.Param("service")
+	h, ok := s.Handler[serviceType]
+	if !ok {
+		s.Handler[serviceType] = s.HandlerConstruct(serviceType)
+	}
+	h.Handle(c)
+}
+
+func (s *Server) HandlerConstruct(serviceType string) handler.Handler {
+	switch serviceType {
+	case "version":
+		return handler.TypeVersion{}
+	case "health":
+		return handler.TypeVersion{}
+	case "scheduler":
+		return handler.TypeVersion{}
+	case "redis":
+		return handler.TypeVersion{}
+	case "postgres":
+		return handler.TypeVersion{}
+	}
+	return nil
+}

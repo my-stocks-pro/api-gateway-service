@@ -2,17 +2,25 @@ package proxy
 
 import (
 	"net/http"
-	"github.com/kataras/iris/core/errors"
 	"bytes"
+	"io/ioutil"
 )
 
-func (p TypeProxy) POST(servicePath string, body []byte) error {
-	resp, err := http.Post(servicePath, "application/json", bytes.NewBuffer(body))
+func (p TypeProxy) Request(httpMethod string, url string, msg []byte) ([]byte, error) {
+	req, err := http.NewRequest(httpMethod, url, bytes.NewBuffer(msg))
 	if err != nil {
-		return err
+		return nil, err
 	}
-	if resp.StatusCode != http.StatusOK {
-		return errors.New(resp.Status)
+
+	resp, err := p.httpClient.Do(req)
+	if err != nil {
+		return nil, err
 	}
-	return nil
+
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	return body, nil
 }

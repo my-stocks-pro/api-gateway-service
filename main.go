@@ -3,7 +3,6 @@ package main
 import (
 	"github.com/my-stocks-pro/api-gateway-service/infrastructure"
 	"github.com/my-stocks-pro/api-gateway-service/engine"
-	"github.com/my-stocks-pro/api-gateway-service/handler"
 	"github.com/my-stocks-pro/api-gateway-service/proxy"
 )
 
@@ -25,9 +24,9 @@ func main() {
 
 	prx := proxy.New(httpClient)
 
-	gateway := handler.New(config, logger, consul, prx)
+	//gateway := handler.New(config, logger, consul, prx)
 
-	server := engine.New(gateway)
+	server := engine.New(config, logger, consul, prx)
 
 	server.InitMux()
 

@@ -1,14 +1,17 @@
 package infrastructure
 
+import "time"
 
 type Config struct {
-	Name string
-	Port string
+	StartDate string
+	Name      string
+	Port      string
 }
 
 func NewConfig() Config {
 	return Config{
-		Name: "api-handler",
-		Port: ":9000",
+		StartDate: time.Now().Format("2006-01-02 15:04"),
+		Name:      "api-gateway",
+		Port:      ":9000",
 	}
 }
