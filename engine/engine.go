@@ -14,11 +14,11 @@ func (s *Server) InitMux() {
 
 func (s *Server) GetHandler(c *gin.Context) {
 	serviceType := c.Param("service")
-	h, ok := s.Handler[serviceType]
+	_, ok := s.Handler[serviceType]
 	if !ok {
 		s.Handler[serviceType] = s.HandlerConstruct(serviceType)
 	}
-	h.Handle(c)
+	s.Handler[serviceType].Handle(c)
 }
 
 func (s *Server) HandlerConstruct(serviceType string) handler.Handler {
