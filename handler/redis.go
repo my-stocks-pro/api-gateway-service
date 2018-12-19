@@ -6,7 +6,6 @@ import (
 	"github.com/my-stocks-pro/api-gateway-service/proxy"
 	"net/http"
 	"fmt"
-	"io/ioutil"
 	"errors"
 )
 
@@ -15,32 +14,30 @@ type Redis interface {
 }
 
 type TypeRedis struct {
-	Config infrastructure.Config
-	Logger infrastructure.Logger
-	Consul infrastructure.Consul
-	Proxy  proxy.Proxy
+	config infrastructure.Config
+	logger infrastructure.Logger
+	consul infrastructure.Consul
+	proxy  proxy.Proxy
 }
 
-func NewRedis(config infrastructure.Config, logger infrastructure.Logger, consul infrastructure.Consul, proxy proxy.Proxy) TypeScheduler {
-	return TypeScheduler{
-		Config: config,
-		Logger: logger,
-		Consul: consul,
-		Proxy:  proxy,
+func NewRedis(config infrastructure.Config, logger infrastructure.Logger, consul infrastructure.Consul, proxy proxy.Proxy) TypeRedis {
+	return TypeRedis{
+		config: config,
+		logger: logger,
+		consul: consul,
+		proxy:  proxy,
 	}
 }
 
 func (r TypeRedis) Handle(c *gin.Context) {
-	var body []byte
-	var err error
 	msg := &CommonMessage{}
 
-	if err = c.BindJSON(msg); err != nil {
+	if err := c.BindJSON(msg); err != nil {
 		c.JSON(http.StatusBadRequest, err.Error())
 		return
 	}
 
-	servicePath, err := r.Consul.DiscoveryService(c.Param(ServiceKey))
+	servicePath, err := r.consul.DiscoveryService(c.Param("service"))
 	if err != nil {
 		c.JSON(http.StatusBadRequest, err.Error())
 		return
@@ -49,24 +46,16 @@ func (r TypeRedis) Handle(c *gin.Context) {
 
 	switch c.Request.Method {
 	case http.MethodPost:
-		body, err = ioutil.ReadAll(c.Request.Body)
+		r.proxy.Request(c.Request.Method, servicePath, c.Request.Body)
+	case http.MethodGet:
+		body, err := r.proxy.Request(c.Request.Method, servicePath, nil)
 		if err != nil {
 			c.JSON(http.StatusBadRequest, err.Error())
 			return
 		}
-	case http.MethodGet:
-		break
+		r.proxy.Request(c.Request.Method, servicePath, body)
 	default:
 		c.JSON(http.StatusMethodNotAllowed, errors.New(c.Request.Method))
-		return
-	}
-
-	fmt.Println(c.Request.Method, c.Param(ServiceKey))
-	fmt.Println(body)
-
-	body, err = r.Proxy.Request(c.Request.Method, servicePath, body)
-	if err != nil {
-		c.JSON(http.StatusBadRequest, err.Error())
 		return
 	}
 }

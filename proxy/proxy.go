@@ -2,12 +2,13 @@ package proxy
 
 import (
 	"net/http"
-	"bytes"
 	"io/ioutil"
+	"github.com/kataras/iris/core/errors"
+	"io"
 )
 
-func (p TypeProxy) Request(httpMethod string, url string, msg []byte) ([]byte, error) {
-	req, err := http.NewRequest(httpMethod, url, bytes.NewBuffer(msg))
+func (p TypeProxy) Request(httpMethod string, url string, body io.ReadCloser) (io.ReadCloser, error) {
+	req, err := http.NewRequest(httpMethod, url, body)
 	if err != nil {
 		return nil, err
 	}
@@ -17,7 +18,15 @@ func (p TypeProxy) Request(httpMethod string, url string, msg []byte) ([]byte, e
 		return nil, err
 	}
 
-	body, err := ioutil.ReadAll(resp.Body)
+	if resp.StatusCode != http.StatusOK {
+		return nil, errors.New(resp.Status)
+	}
+
+	return resp.Body, nil
+}
+
+func (p TypeProxy) ReadResponseBody(blob io.ReadCloser) ([]byte, error) {
+	body, err := ioutil.ReadAll(blob)
 	if err != nil {
 		return nil, err
 	}

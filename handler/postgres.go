@@ -11,21 +11,20 @@ type Postgres interface {
 }
 
 type TypePostgres struct {
-	Config  infrastructure.Config
-	Logger  infrastructure.Logger
-	Consul  infrastructure.Consul
-	Proxy   proxy.Proxy
+	config infrastructure.Config
+	logger infrastructure.Logger
+	consul infrastructure.Consul
+	proxy  proxy.Proxy
 }
 
-func NewPostgres(config infrastructure.Config, logger infrastructure.Logger, consul infrastructure.Consul, proxy proxy.Proxy) TypeScheduler {
-	return TypeScheduler{
-		Config: config,
-		Logger: logger,
-		Consul: consul,
-		Proxy:  proxy,
+func NewPostgres(config infrastructure.Config, logger infrastructure.Logger, consul infrastructure.Consul, proxy proxy.Proxy) TypePostgres {
+	return TypePostgres{
+		config: config,
+		logger: logger,
+		consul: consul,
+		proxy:  proxy,
 	}
 }
-
 
 func (v TypePostgres) Handle(c *gin.Context) {
 

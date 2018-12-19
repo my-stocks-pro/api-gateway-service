@@ -4,6 +4,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+const (
+	service = "service"
+)
+
 type Handler interface {
 	Handle(c *gin.Context)
 }

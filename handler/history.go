@@ -14,10 +14,10 @@ type History interface {
 }
 
 type TypeHistory struct {
-	Config infrastructure.Config
-	Logger infrastructure.Logger
-	Consul infrastructure.Consul
-	Proxy  proxy.Proxy
+	config infrastructure.Config
+	logger infrastructure.Logger
+	consul infrastructure.Consul
+	proxy  proxy.Proxy
 }
 
 type HistoryMessage struct {
@@ -26,12 +26,12 @@ type HistoryMessage struct {
 	ToData   string
 }
 
-func NewHistory(config infrastructure.Config, logger infrastructure.Logger, consul infrastructure.Consul, proxy proxy.Proxy) TypeScheduler {
-	return TypeScheduler{
-		Config: config,
-		Logger: logger,
-		Consul: consul,
-		Proxy:  proxy,
+func NewHistory(config infrastructure.Config, logger infrastructure.Logger, consul infrastructure.Consul, proxy proxy.Proxy) TypeHistory {
+	return TypeHistory{
+		config: config,
+		logger: logger,
+		consul: consul,
+		proxy:  proxy,
 	}
 }
 
@@ -47,14 +47,14 @@ func (h TypeHistory) Handle(c *gin.Context) {
 		return
 	}
 
-	servicePath, err := h.Consul.DiscoveryService(c.Param(ServiceKey))
+	servicePath, err := h.consul.DiscoveryService(c.Param("service"))
 	if err != nil {
 		c.JSON(http.StatusBadRequest, err.Error())
 		return
 	}
 	fmt.Println(servicePath)
 
-	body, err := h.Proxy.Request(c.Request.Method, servicePath, nil)
+	body, err := h.proxy.Request(c.Request.Method, servicePath, nil)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, err.Error())
 		return
