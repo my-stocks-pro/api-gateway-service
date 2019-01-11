@@ -24,8 +24,6 @@ func main() {
 
 	prx := proxy.New(httpClient)
 
-	//gateway := handler.New(config, logger, consul, prx)
-
 	server := engine.New(config, logger, consul, prx)
 
 	server.InitMux()
